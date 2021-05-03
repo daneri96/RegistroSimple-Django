@@ -1,0 +1,27 @@
+{%extends 'layout.html'%}
+{%block title%}Registro de Usuarios{%endblock%}
+
+
+
+{%block content%}
+
+<h2>{{registro}}</h2>
+
+<form action="{%url 'guardar_registro'%}" method="POST">
+    {%csrf_token%}
+    <label>Nombre:</label>
+    <input type="text" name="nombre"/>
+    <br>
+    <label>Email:</label>
+    <input type="email" name="email"/>
+    <br>
+    <label>Password:</label>
+    <input type="password" name="password"/>
+    <br>
+    <label>Direccion</label>
+    <input type="text" name="direccion"/>
+    <br>
+    <input type="submit" value="Registrar"/>
+</form>
+
+{%endblock%}
